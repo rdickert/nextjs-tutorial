@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
 import Link from 'next/link'
+import styled from 'styled-components';
 
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
@@ -16,6 +17,11 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
+const BigText = styled.h1`
+  font-size: 48px;
+  font-family: fantasy
+`
+
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
@@ -23,8 +29,9 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Yellow and Flighty</p>
+        <BigText>Yellow and Flighty</BigText>
         <p>
+          
           (This is a sample website - see{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
